@@ -1,0 +1,12 @@
+#To get started, clone the nodejs-image-demo repository into a directory called istio_project:
+git clone https://github.com/do-community/nodejs-image-demo.git istio_project
+cd istio_project
+docker build -t your_dockerhub_username/node-demo 
+docker images
+docker run --name node-demo -p 80:8080 -d your_dockerhub_username/node-demo
+docker ps
+docker stop 49a67bafc325
+docker login -u your_dockerhub_username 
+docker push your_dockerhub_username/node-demo
+
+#Now application image is ready with Istio
